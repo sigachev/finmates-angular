@@ -17,6 +17,7 @@ import {Layout1FlexComponent} from './layout/layout-1-flex/layout-1-flex.compone
 import {Layout2FlexComponent} from './layout/layout-2-flex/layout-2-flex.component';
 import {LayoutSidenavComponent} from './layout/layout-sidenav/layout-sidenav.component';
 import {LayoutWithoutNavbarComponent} from './layout/layout-without-navbar/layout-without-navbar.component';
+import {LayoutBlankComponent} from './layout/layout-blank/layout-blank.component';
 
 // *******************************************************************************
 // Routes
@@ -30,6 +31,9 @@ const routes: Routes = [
   { path: 'page-2', component: Layout2Component, children: [
     { path: '', component: Page2Component },
   ]},
+
+  // Authentication
+  { path: '', component: Layout2Component, loadChildren: () => import('./+authentication/authentication.module').then(m => m.AuthenticationModule) },
 
 
   // Pages

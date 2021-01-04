@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  S3_BUCKET: 'zource.com',
+  APP_NAME: 'zource.com',
+  myDomain: 'localhost',
+  myPort: 5000,
+  apiUrl: 'http://localhost:5000/api',
+  s3Bucket: 'https://zource-bucket.s3.us-east-1.amazonaws.com/',
+  whitelist: ['localhost:5000']
 };
 
 /*

@@ -25,19 +25,23 @@ import {LayoutBlankComponent} from './layout/layout-blank/layout-blank.component
 const routes: Routes = [
 
   { path: '', component: Layout2Component, pathMatch: 'full', children: [
-    { path: '', component: HomeComponent },
-  ]},
+      { path: '', component: HomeComponent },
+    ]},
+
 
   { path: 'page-2', component: Layout2Component, children: [
     { path: '', component: Page2Component },
   ]},
 
   // Authentication
-  { path: '', component: Layout2Component, loadChildren: () => import('./+authentication/authentication.module').then(m => m.AuthenticationModule) },
+  { path: '', component: LayoutBlankComponent, loadChildren: () => import('./components/authentication/authentication.module').then(m => m.AuthenticationModule) },
 
 
   // Pages
   { path: 'user', component: Layout2Component, loadChildren: () => import('./+profile/profile.module').then(m => m.ProfileModule) },
+
+
+
 
 
   // 404 Not Found page

@@ -1,15 +1,41 @@
-import { Component } from '@angular/core';
-import { Router, Event as RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {
+  Router,
+  Event as RouterEvent,
+  NavigationStart,
+  NavigationEnd,
+  NavigationCancel,
+  NavigationError,
+  ActivatedRoute
+} from '@angular/router';
 import { AppService } from './app.service';
 import { LayoutService } from './layout/layout.service';
+import {AuthenticationService} from './services/authentication.service';
+import {DomSanitizer} from '@angular/platform-browser';
+import {User} from './models/user';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styles: [':host { display: block; }']
 })
-export class AppComponent {
-  constructor(private router: Router, private appService: AppService, private layoutService: LayoutService) {
+export class AppComponent implements OnInit {
+  title = 'Finmates app';
+  currentUser: User;
+
+  constructor(private router: Router,
+              private appService: AppService,
+              private layoutService: LayoutService,
+              private authService: AuthenticationService,
+              private route: ActivatedRoute,
+              public sanitizer: DomSanitizer
+              ) {
+
+    this.authService.currentUser.subscribe(data => {
+      this.currentUser = data;
+    });
+
+
     // Subscribe to router events to handle page transition
     this.router.events.subscribe(this.navigationInterceptor.bind(this));
 
@@ -56,5 +82,14 @@ export class AppComponent {
           , 300);
       }
     }
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0);
+    });
   }
 }

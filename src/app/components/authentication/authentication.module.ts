@@ -3,21 +3,23 @@ import { CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {TagInputModule} from 'ngx-chips';
-import {ProfileRoutingModule} from '../+profile/profile-routing.module';
 import { LoginComponent } from './login/login.component';
+import {AuthenticationRoutingModule} from './authentication-routing.module';
+import { RegisterComponent } from './register/register.component';
 
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     NgSelectModule,
     TagInputModule,
-    ProfileRoutingModule
+    AuthenticationRoutingModule
   ]
 })
 export class AuthenticationModule { }

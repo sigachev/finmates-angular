@@ -23,7 +23,9 @@
 
     <sidenav-divider class="mb-1"></sidenav-divider>
     <sidenav-header class="small font-weight-semibold">Additional Pages</sidenav-header>
-    <sidenav-router-link icon="ion ion-md-desktop" route="/login" [active]="isActive('/login')">Page 2</sidenav-router-link>
+    <sidenav-router-link icon="ion ion-md-document" route="/login" [active]="isActive('/login')">Login</sidenav-router-link>
+    <sidenav-router-link icon="ion ion-md-document" route="/register" [active]="isActive('/register')">Register</sidenav-router-link>
+    <sidenav-router-link icon="ion ion-paper-plane-outline" route="/login" [active]="isActive('/messages')">Messages</sidenav-router-link>
 
   </div>
 </sidenav>

@@ -22,6 +22,8 @@ import { LayoutModule } from './layout/layout.module';
 
 import { HomeComponent } from './home/home.component';
 import { Page2Component } from './page-2/page-2.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {AuthGuard} from './guards/auth.guard';
 
 // *******************************************************************************
 //
@@ -38,8 +40,9 @@ import { Page2Component } from './page-2/page-2.component';
 
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     NgbModule,
-
+    HttpClientModule,
     // App
     AppRoutingModule,
     LayoutModule
@@ -47,7 +50,8 @@ import { Page2Component } from './page-2/page-2.component';
 
   providers: [
     Title,
-    AppService
+    AppService,
+    AuthGuard
   ],
 
   bootstrap: [

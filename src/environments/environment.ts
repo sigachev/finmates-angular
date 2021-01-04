@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
 
-  S3_BUCKET: 'zource.com',
-  APP_NAME: 'zource.com',
+  S3_BUCKET: 'finmates.com',
+  APP_NAME: 'finmates.com',
   myDomain: 'localhost',
   myPort: 5000,
   apiUrl: 'http://localhost:5000/api',
-  s3Bucket: 'https://zource-bucket.s3.us-east-1.amazonaws.com/',
+  s3Bucket: 'https://finmates-bucket.s3.us-east-1.amazonaws.com/',
   whitelist: ['localhost:5000']
 };
 

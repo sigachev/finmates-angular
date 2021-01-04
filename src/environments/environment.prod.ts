@@ -2,12 +2,12 @@ export const environment = {
   production: true,
   BUILD_ENV: 'prod',
 
-  S3_BUCKET: 'zource.com',
-  APP_NAME: 'zource.com',
+  S3_BUCKET: 'finmates.com',
+  APP_NAME: 'finmates.com',
 
-  myDomain: 'zource1.us-east-1.elasticbeanstalk.com',
+  myDomain: 'finmates.us-east-1.elasticbeanstalk.com',
   myPort: 5000,
-  apiUrl: 'http://zource1.us-east-1.elasticbeanstalk.com/api',
-  s3Bucket: 'https://zource-bucket.s3.us-east-1.amazonaws.com/',
-  whitelist: ['localhost:5000', 'zource1.us-east-1.elasticbeanstalk.com']
+  apiUrl: 'http://finmates.us-east-1.elasticbeanstalk.com/api',
+  s3Bucket: 'https://finmates-bucket.s3.us-east-1.amazonaws.com/',
+  whitelist: ['localhost:5000', 'finmates.us-east-1.elasticbeanstalk.com']
 };

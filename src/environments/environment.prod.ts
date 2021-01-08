@@ -9,5 +9,5 @@ export const environment = {
   myPort: 5000,
   apiUrl: 'http://finmates.us-east-1.elasticbeanstalk.com/api',
   s3Bucket: 'https://finmates-bucket.s3.us-east-1.amazonaws.com/',
-  whitelist: ['localhost:5000', 'finmates.us-east-1.elasticbeanstalk.com']
+  whitelist: ['localhost:5000', 's01.finmates.net', 'finmates.us-east-1.elasticbeanstalk.com']
 };

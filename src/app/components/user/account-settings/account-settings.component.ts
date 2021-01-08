@@ -1,13 +1,13 @@
 /* tslint:disable:max-line-length */
-import { Component } from '@angular/core';
-import { AppService } from '../../app.service';
+import {Component} from '@angular/core';
+import {AppService} from '../../../app.service';
 
 @Component({
   selector: 'app-account-settings',
   templateUrl: './account-settings.component.html',
   styleUrls: [
-    '../../../vendor/libs/ng-select/ng-select.scss',
-    '../../../vendor/styles/pages/account.scss',
+    '../../../../vendor/libs/ng-select/ng-select.scss',
+    '../../../../vendor/styles/pages/account.scss',
     './account-settings.component.scss'
   ]
 })

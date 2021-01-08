@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import { AppService } from '../../../app.service';
 import {AuthenticationService} from '../../../services/authentication.service';
 import {Router} from '@angular/router';
 import {User} from '../../../models/user';
@@ -27,7 +26,8 @@ export class LoginComponent implements OnInit {
       if (this.authService.currentUserValue.role === Role.USER) {
         this.router.navigate(['/profile']);
       } else if (this.authService.currentUserValue.role === Role.ADMIN) {
-        this.router.navigate(['/admin']);
+        /*this.router.navigate(['/admin']);*/
+        this.router.navigate(['/account-settings']);
       }
 
       return;

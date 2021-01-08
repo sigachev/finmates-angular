@@ -186,15 +186,19 @@
         <a ngbDropdownToggle class="nav-link" href="javascript:void(0)">
           <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
             <img src="assets/img/avatars/1.png" alt class="d-block ui-w-30 rounded-circle">
-            <span class="px-1 mr-lg-2 ml-2 ml-lg-0">Mike Greene</span>
+            <span class="px-1 mr-lg-2 ml-2 ml-lg-0">{{currentUser.firstName}} {{currentUser.lastName}}</span>
           </span>
         </a>
         <div ngbDropdownMenu [class.dropdown-menu-right]="!isRTL">
-          <a href="javascript:void(0)" class="dropdown-item"><i class="ion ion-ios-person text-lightest"></i> &nbsp; My profile</a>
-          <a href="javascript:void(0)" class="dropdown-item"><i class="ion ion-ios-mail text-lightest"></i> &nbsp; Messages</a>
-          <a href="user/account-settings" class="dropdown-item"><i class="ion ion-md-settings text-lightest"></i> &nbsp; Account settings</a>
+          <a [routerLink]="['/profile']" class="dropdown-item"><i class="ion ion-ios-person text-lightest"></i> &nbsp;
+            My profile</a>
+          <a [routerLink]="['/messages']" class="dropdown-item"><i class="ion ion-ios-mail text-lightest"></i> &nbsp;
+            Messages</a>
+          <a [routerLink]="['/account-settings']" class="dropdown-item"><i
+            class="ion ion-md-settings text-lightest"></i> &nbsp; Account settings</a>
           <div class="dropdown-divider"></div>
-          <a href="javascript:void(0)" class="dropdown-item"><i class="ion ion-ios-log-out text-danger"></i> &nbsp; Log Out</a>
+          <a (click)="logOut()" class="dropdown-item" href="javascript:void(0)"><i
+            class="ion ion-ios-log-out text-danger"></i> &nbsp; Log Out</a>
         </div>
       </div>
     </div>

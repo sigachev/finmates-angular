@@ -1,5 +1,8 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
-import { LayoutService } from '../layout.service';
+import {AfterViewInit, Component, OnDestroy} from '@angular/core';
+import {LayoutService} from '../layout.service';
+import {AuthenticationService} from '../../services/authentication.service';
+import {User} from '../../models/user';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-layout-2',
@@ -9,8 +12,20 @@ import { LayoutService } from '../layout.service';
 export class Layout2Component implements AfterViewInit, OnDestroy {
   // Prevent "blink" effect
   public initialized = false;
+  currentUser: User;
 
-  constructor(private layoutService: LayoutService) {}
+  constructor(private authService: AuthenticationService,
+              public router: Router,
+              private layoutService: LayoutService) {
+
+    this.authService.currentUser.subscribe(data => {
+      this.currentUser = data;
+    });
+
+    if (authService.currentUserValue == null) {
+      this.router.navigate(['login']);
+    }
+  }
 
   ngAfterViewInit() {
     setTimeout(() => {

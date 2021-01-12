@@ -23,7 +23,7 @@ export class Layout2Component implements AfterViewInit, OnDestroy {
     });
 
     if (authService.currentUserValue == null) {
-      this.router.navigate(['login']);
+      this.router.navigate(['dashboard']);
     }
   }
 

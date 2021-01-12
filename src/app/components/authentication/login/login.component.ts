@@ -24,10 +24,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     if (this.authService.currentUserValue) {
       if (this.authService.currentUserValue.role === Role.USER) {
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/dashboard']);
       } else if (this.authService.currentUserValue.role === Role.ADMIN) {
         /*this.router.navigate(['/admin']);*/
-        this.router.navigate(['/account-settings']);
+        this.router.navigate(['/dashboard']);
       }
 
       return;

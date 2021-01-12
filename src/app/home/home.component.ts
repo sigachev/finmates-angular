@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
-    if (window.pageYOffset > 200) {
+    if (window.pageYOffset > 150) {
       const element = document.getElementById('navbar1');
       element.classList.remove('pt-lg-4');
       element.classList.remove('navbar-light');

@@ -7,6 +7,7 @@ import {User} from '../../models/user';
 @Component({
   selector: 'app-layout-navbar',
   templateUrl: './layout-navbar.component.html',
+  styleUrls: ['./layout-navbar.component.css'],
   styles: [':host { display: block; }']
 })
 export class LayoutNavbarComponent {

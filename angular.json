@@ -30,7 +30,6 @@
             "styles": [
               "src/styles.scss",
               "src/styles.css",
-              "src/assets/styles/puiblic-pages/landing.css",
               "src/vendor/styles/bootstrap.scss",
               "src/vendor/styles/appwork.scss",
               "src/vendor/styles/theme-corporate.scss",

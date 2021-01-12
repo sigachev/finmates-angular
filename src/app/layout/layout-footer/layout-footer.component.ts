@@ -1,5 +1,5 @@
-import { Component, HostBinding } from '@angular/core';
-import { AppService } from '../../app.service';
+import {Component, HostBinding} from '@angular/core';
+import {AppService} from '../../app.service';
 
 @Component({
   selector: 'app-layout-footer',
@@ -8,6 +8,7 @@ import { AppService } from '../../app.service';
 })
 export class LayoutFooterComponent {
   @HostBinding('class.layout-footer') hostClassMain = true;
+
 
   constructor(private appService: AppService) {}
 

@@ -1,0 +1,17 @@
+<div [ngClass]="{'layout-loading': !initialized}" class="layout-wrapper layout-1 layout-without-sidenav">
+  <div class="layout-inner">
+
+    <app-public-layout-navbar [sidenavToggle]="false" class="animated fadeInDown"
+                              id="navbar"></app-public-layout-navbar>
+
+    <div class="layout-container">
+      <div class="layout-content">
+        <div class="router-transitions">
+          <router-outlet></router-outlet>
+        </div>
+
+        <app-public-layout-footer></app-public-layout-footer>
+      </div>
+    </div>
+  </div>
+</div>

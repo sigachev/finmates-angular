@@ -28,6 +28,13 @@ const routes: Routes = [
 
 
   {
+    path: '',
+    component: Layout2Component,
+    loadChildren: () => import('./components/dashboard/dashboards.module').then(m => m.DashboardsModule)
+  },
+
+
+  {
     path: 'page-2', component: LayoutWithoutSidenavComponent, children: [
       {path: '', component: Page2Component},
     ]

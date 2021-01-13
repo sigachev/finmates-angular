@@ -12,6 +12,9 @@ import {Layout2Component} from './layout/layout-2/layout-2.component';
 import {LayoutBlankComponent} from './layout/layout-blank/layout-blank.component';
 import {LayoutWithoutSidenavComponent} from './layout/layout-without-sidenav/layout-without-sidenav.component';
 import {PublicLayoutComponent} from './layout/public-layout/public-layout.component';
+import {AuthGuard} from './guards/auth.guard';
+import {Role} from './models/role';
+import {PublicGuard} from './guards/public.guard';
 
 // *******************************************************************************
 // Routes
@@ -21,7 +24,10 @@ import {PublicLayoutComponent} from './layout/public-layout/public-layout.compon
 const routes: Routes = [
 
   {
-    path: '', component: PublicLayoutComponent, pathMatch: 'full', children: [
+    path: '', component: PublicLayoutComponent,
+    pathMatch: 'full',
+    canActivate: [PublicGuard],
+    children: [
       {path: '', component: HomeComponent},
     ]
   },
@@ -30,6 +36,8 @@ const routes: Routes = [
   {
     path: '',
     component: Layout2Component,
+    canActivate: [AuthGuard],
+    data: {roles: [Role.USER, Role.ADMIN], breadcrumb: 'Admin', title: 'Home'},
     loadChildren: () => import('./components/dashboard/dashboards.module').then(m => m.DashboardsModule)
   },
 
@@ -49,7 +57,12 @@ const routes: Routes = [
 
 
   // Pages
-  {path: '', component: Layout2Component, loadChildren: () => import('./components/user/user.module').then(m => m.UserModule)},
+  {
+    path: '',
+    component: Layout2Component,
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./components/user/user.module').then(m => m.UserModule)
+  },
 
 
   // 404 Not Found page

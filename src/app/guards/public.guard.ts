@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '@angular/router';
-
 import {User} from '../models/user';
 import {AuthenticationService} from '../services/authentication.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+
+/* -------  redirects authenticated users to /dashboard   -------- */
+export class PublicGuard implements CanActivate {
 
   currentUser: User;
 
@@ -19,14 +20,10 @@ export class AuthGuard implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (this.currentUser) {
-      if (route.data.roles && route.data.roles.indexOf(this.currentUser.role) === -1) {
-        this.router.navigate(['/401']);
-        return false;
-      }
+    if (!this.currentUser) {
       return true;
     }
-    this.router.navigate(['/login'], {queryParams: {returnUrl: state.url}});
+    this.router.navigate(['/dashboard'], {queryParams: {returnUrl: state.url}});
     return false;
   }
 

@@ -15,6 +15,7 @@ import {PublicLayoutComponent} from './layout/public-layout/public-layout.compon
 import {AuthGuard} from './guards/auth.guard';
 import {Role} from './models/role';
 import {PublicGuard} from './guards/public.guard';
+import {ContactsComponent} from './components/public-pages/contacts/contacts.component';
 
 // *******************************************************************************
 // Routes
@@ -32,6 +33,14 @@ const routes: Routes = [
     ]
   },
 
+  {
+    path: 'contacts', component: PublicLayoutComponent,
+    pathMatch: 'full',
+    /*canActivate: [PublicGuard],*/
+    children: [
+      {path: '', component: ContactsComponent},
+    ]
+  },
 
   {
     path: '',
@@ -77,4 +86,15 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+
+  /*  authServ: AuthenticationService;
+    loggedIn = false;
+
+
+    constructor(private authService: AuthenticationService) {
+
+      if (this.authService.currentUserValue) {
+       this.loggedIn = true;
+    }*/
+}

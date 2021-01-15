@@ -1,8 +1,15 @@
-import { Injectable, NgZone } from '@angular/core';
+import {Injectable, NgZone} from '@angular/core';
+import {User} from '../models/user';
 
 @Injectable()
 export class LayoutService {
-  constructor(private zone: NgZone) {}
+
+  user: User = new User();
+  private layout: string;
+
+
+  constructor(private zone: NgZone) {
+  }
 
   private get layoutHelpers() {
     return (window as any).layoutHelpers;

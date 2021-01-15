@@ -15,7 +15,7 @@
   "dependencies": {
     "@agm/core": "~1.1.0",
     "@akveo/ng2-completer": "~9.0.1",
-    "@angular/animations": "~9.1.0",
+    "@angular/animations": "^9.1.13",
     "@angular/cdk": "~9.2.0",
     "@angular/common": "~9.1.0",
     "@angular/compiler": "~9.1.0",
@@ -75,7 +75,7 @@
     "ngx-sortablejs": "~3.1.3",
     "ngx-swiper-wrapper": "~9.0.0",
     "ngx-textarea-autosize": "^2.0.0",
-    "ngx-toastr": "~12.0.0",
+    "ngx-toastr": "^12.1.0",
     "ngx-trend": "~5.0.0",
     "nouislider": "~14.2.0",
     "numeral": "~2.0.6",

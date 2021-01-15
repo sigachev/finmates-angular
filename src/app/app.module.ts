@@ -23,6 +23,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {AuthGuard} from './guards/auth.guard';
 import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import {ThemeSettingsService} from '../vendor/libs/theme-settings/theme-settings.service';
+import {AuthenticationService} from './services/authentication.service';
+import {ContactsComponent} from './components/public-pages/contacts/contacts.component';
+import {ToastrModule} from 'ngx-toastr';
 
 // *******************************************************************************
 //
@@ -34,7 +37,8 @@ import {ThemeSettingsService} from '../vendor/libs/theme-settings/theme-settings
 
     // Pages
     HomeComponent,
-    Page2Component
+    Page2Component,
+    ContactsComponent
   ],
 
   imports: [
@@ -43,7 +47,13 @@ import {ThemeSettingsService} from '../vendor/libs/theme-settings/theme-settings
     NgbModule,
     HttpClientModule,
     FormsModule,
-
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      closeButton: true,
+      newestOnTop: true,
+    }),
 
     PerfectScrollbarModule,
     // App
@@ -56,7 +66,8 @@ import {ThemeSettingsService} from '../vendor/libs/theme-settings/theme-settings
     Title,
     AppService,
     AuthGuard,
-    ThemeSettingsService
+    ThemeSettingsService,
+    AuthenticationService
   ],
 
   bootstrap: [

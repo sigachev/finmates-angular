@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {BehaviorSubject, config, Observable} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {User} from '../models/user';
 import {environment} from '../../environments/environment';
@@ -45,5 +45,8 @@ export class AuthenticationService {
     this.currentUserSubject.next(null);
     this.router.navigate(['/login']);
   }
+
+  /*update local storage user*/
+
 
 }

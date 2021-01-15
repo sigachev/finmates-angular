@@ -16,7 +16,7 @@ import {UserRoutingModule} from './user-routing.module';
     FormsModule,
     NgSelectModule,
     TagInputModule,
-    UserRoutingModule
+    UserRoutingModule,
   ]
 })
 export class UserModule {

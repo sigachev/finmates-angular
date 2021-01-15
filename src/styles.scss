@@ -1,6 +1,19 @@
 @import './demo';
 @import "./vendor/styles/_custom-variables/features";
 
+////toastr files
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+// or
+@import "~bootstrap/scss/bootstrap";
+
+// then import toastr scss
+@import "~ngx-toastr/toastr-bs4-alert.scss";
+
+@import '~ngx-toastr/toastr-bs4-alert.scss';
+//////
+
+
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
     @content;

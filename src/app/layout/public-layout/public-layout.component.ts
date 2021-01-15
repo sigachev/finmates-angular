@@ -1,6 +1,8 @@
 import {AfterViewInit, Component, OnDestroy} from '@angular/core';
 import {LayoutService} from '../layout.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {AuthenticationService} from '../../services/authentication.service';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-public-layout',
@@ -19,9 +21,20 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 export class PublicLayoutComponent implements AfterViewInit, OnDestroy {
   // Prevent "blink" effect
   public initialized = false;
+  currentUser: User;
 
-  constructor(private layoutService: LayoutService) {
+
+  constructor(private layoutService: LayoutService,
+              private authService: AuthenticationService) {
+    this.authService.currentUser.subscribe(data => {
+      this.currentUser = data;
+    });
   }
+
+  isLoggedIn() {
+    return this.currentUser;
+  }
+
 
   ngAfterViewInit() {
     setTimeout(() => {

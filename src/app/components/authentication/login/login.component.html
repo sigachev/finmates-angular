@@ -22,14 +22,24 @@
         </div>
 
         <!-- Form -->
-        <form (ngSubmit)="f.form.valid && login()" #f="ngForm">
+        <form #f="ngForm" (ngSubmit)="f.form.valid && login()">
+
           <div class="form-group" [ngClass]="{'has-error':f.submitted &&!username.valid}">
-            <label class="form-label">Username</label>
-            <input name="username" [(ngModel)]="user.username" #username="ngModel" type="text" class="form-control" required>
+            <label class="form-label">Email</label>
+            <input #username="ngModel" [(ngModel)]="user.username" class="form-control" name="email" required
+                   type="text">
             <div class="alert alert-danger" *ngIf="f.submitted && !username.valid">
               A valid username is required.
             </div>
           </div>
+          <!--
+                    <div class="form-group" [ngClass]="{'has-error':f.submitted &&!email.valid}">
+                      <label class="form-label">Email</label>
+                      <input name="email" [(ngModel)]="user.email" #email="ngModel" type="text" class="form-control" required>
+                      <div class="alert alert-danger" *ngIf="f.submitted && !email.valid">
+                        A valid email is required.
+                      </div>
+                    </div>-->
 
           <div class="form-group">
             <label class="form-label d-flex justify-content-between align-items-end">

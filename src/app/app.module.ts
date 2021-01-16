@@ -26,6 +26,7 @@ import {ThemeSettingsService} from '../vendor/libs/theme-settings/theme-settings
 import {AuthenticationService} from './services/authentication.service';
 import {ContactsComponent} from './components/public-pages/contacts/contacts.component';
 import {ToastrModule} from 'ngx-toastr';
+import {PipesModule} from './pipes/pipes.module';
 
 // *******************************************************************************
 //
@@ -59,6 +60,7 @@ import {ToastrModule} from 'ngx-toastr';
     // App
     AppRoutingModule,
     LayoutModule,
+    PipesModule
 
   ],
 

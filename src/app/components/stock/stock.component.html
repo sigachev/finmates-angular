@@ -1,0 +1,7 @@
+<p>Symbol name: {{this.symbol.toUpperCase()}}</p>
+
+<ejs-chart [primaryXAxis]='primaryXAxis' id="chart-container">
+  <e-series-collection>
+    <e-series [dataSource]='chartData' name='Sales' type='Line' xName='month' yName='sales'></e-series>
+  </e-series-collection>
+</ejs-chart>

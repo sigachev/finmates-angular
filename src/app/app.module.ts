@@ -27,6 +27,15 @@ import {AuthenticationService} from './services/authentication.service';
 import {ContactsComponent} from './components/public-pages/contacts/contacts.component';
 import {ToastrModule} from 'ngx-toastr';
 import {PipesModule} from './pipes/pipes.module';
+import {
+  CategoryService,
+  ChartModule,
+  DataLabelService,
+  LegendService,
+  LineSeriesService,
+  TooltipService
+} from '@syncfusion/ej2-angular-charts';
+import {ChartComponent} from './components/chart/chart.component';
 
 // *******************************************************************************
 //
@@ -39,7 +48,8 @@ import {PipesModule} from './pipes/pipes.module';
     // Pages
     HomeComponent,
     Page2Component,
-    ContactsComponent
+    ContactsComponent,
+    ChartComponent
   ],
 
   imports: [
@@ -56,6 +66,7 @@ import {PipesModule} from './pipes/pipes.module';
       newestOnTop: true,
     }),
 
+    ChartModule,
     PerfectScrollbarModule,
     // App
     AppRoutingModule,
@@ -69,7 +80,9 @@ import {PipesModule} from './pipes/pipes.module';
     AppService,
     AuthGuard,
     ThemeSettingsService,
-    AuthenticationService
+    AuthenticationService,
+
+    CategoryService, LegendService, TooltipService, DataLabelService, LineSeriesService
   ],
 
   bootstrap: [

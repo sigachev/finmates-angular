@@ -16,6 +16,7 @@ import {AuthGuard} from './guards/auth.guard';
 import {Role} from './models/role';
 import {PublicGuard} from './guards/public.guard';
 import {ContactsComponent} from './components/public-pages/contacts/contacts.component';
+import {ChartComponent} from './components/chart/chart.component';
 
 // *******************************************************************************
 // Routes
@@ -50,12 +51,32 @@ const routes: Routes = [
     loadChildren: () => import('./components/dashboard/dashboards.module').then(m => m.DashboardsModule)
   },
 
+  {
+    path: 'stock',
+    component: Layout2Component,
+    canActivate: [AuthGuard],
+    data: {roles: [Role.USER, Role.ADMIN], breadcrumb: 'Admin', title: 'Home'},
+    loadChildren: () => import('./components/stock/stock.module').then(m => m.StockModule)
+  },
+
 
   {
     path: 'page-2', component: LayoutWithoutSidenavComponent, children: [
       {path: '', component: Page2Component},
     ]
   },
+
+  {
+    path: 'chart', component: LayoutWithoutSidenavComponent, children: [
+      {path: '', component: ChartComponent},
+    ]
+  },
+
+  /*  {
+      path: 'stock', component: LayoutWithoutSidenavComponent, children: [
+        {path: '', component: StockComponent},
+      ]
+    },*/
 
   // Authentication
   {

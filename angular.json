@@ -35,8 +35,11 @@
               "src/vendor/styles/theme-corporate.scss",
               "src/vendor/styles/colors.scss",
               "src/vendor/styles/uikit.scss"
+              /*"node_modules/igniteui-angular/styles/igniteui-angular.css"*/
             ],
-            "scripts": []
+            "scripts": [
+              /*"node_modules/hammerjs/hammer.min.js"*/
+            ]
           },
           "configurations": {
             "production": {

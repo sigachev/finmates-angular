@@ -1,27 +1,23 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {StockComponent} from './stock.component';
-import {
-  CategoryService,
-  ChartModule,
-  DataLabelService,
-  LegendService,
-  LineSeriesService,
-  TooltipService
-} from '@syncfusion/ej2-angular-charts';
+
+
 import {StockRoutingModule} from './stock-routing.module';
+
+import {StockDataService} from '../../services/stock-data.service';
+import {IgxFinancialChartModule} from 'igniteui-angular-charts';
 
 
 @NgModule({
   declarations: [StockComponent],
   imports: [
     CommonModule,
-    ChartModule,
-
-    StockRoutingModule
+    StockRoutingModule,
+    IgxFinancialChartModule
   ],
   providers: [
-    CategoryService, LegendService, TooltipService, DataLabelService, LineSeriesService
+    StockDataService
   ]
 })
 export class StockModule {

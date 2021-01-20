@@ -1,7 +1,106 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  {{symbol | uppercase}}
+  <div class="text-muted text-tiny mt-1"><small class="font-weight-normal">Today is Tuesday, 8 February 2021</small>
+  </div>
+</h4>
+
+<!-- Statistics -->
+<div class="card mb-4">
+  <h6 class="card-header with-elements">
+    <div class="card-header-title">Market Summary: {{symbol | uppercase}}</div>
+    <div class="card-header-elements ml-auto">
+
+      <button class="btn rounded-pill btn-outline-danger" type="button">Trade</button>
+
+    </div>
+  </h6>
+  <div class="row no-gutters row-bordered">
+    <div class="col-md-8 col-lg-12 col-xl-9">
+      <div class="card-body">
+
+        <igx-financial-chart [calloutsDataSource]="calloutsData" [dataSource]="stocksData"
+                             brushes="#8c42f4, #1aba2a, #6b6b6b"
+                             calloutsLabelMemberPath="label"
+                             calloutsVisible="true"
+                             calloutsXMemberPath="index"
+
+                             calloutsYMemberPath="value"
+                             chartType="line"
+                             crosshairsAnnotationEnabled="true"
+                             crosshairsDisplayMode="both"
+                             finalValueAnnotationsVisible="true"
+
+                             height="640px"
+                             isLegendVisible="false"
+                             negativeBrushes="#e23a31"
+                             negativeOutlines="#e23a31"
+                             outlines="#8c42f4, #1aba2a, #6b6b6b"
+                             volumeType="none"
+                             width="100%">
+        </igx-financial-chart>
+
+      </div>
+    </div>
+
+    <div class="col-md-4 col-lg-12 col-xl-3">
+      <div class="card-body">
+
+        <!-- Numbers -->
+        <div class="row">
+          <div class="col-6 col-xl-5 text-muted mb-3">Total sales</div>
+          <div class="col-6 col-xl-7 mb-3">
+            <span class="text-big">10,332</span>
+            <sup class="text-success">+12%</sup>
+          </div>
+          <div class="col-6 col-xl-5 text-muted mb-3">Income amount</div>
+          <div class="col-6 col-xl-7 mb-3">
+            <span class="text-big">$1,534</span>
+            <sup class="text-danger">-5%</sup>
+          </div>
+          <div class="col-6 col-xl-5 text-muted mb-3">Total budget</div>
+          <div class="col-6 col-xl-7 mb-3">
+            <span class="text-big">$10,534</span>
+            <sup class="text-success">+12%</sup>
+          </div>
+          <div class="col-6 col-xl-5 text-muted mb-3">Page views</div>
+          <div class="col-6 col-xl-7 mb-3">
+            <span class="text-big">21,332</span>
+            <sup class="text-danger">-12%</sup>
+          </div>
+          <div class="col-6 col-xl-5 text-muted mb-3">Completed tasks</div>
+          <div class="col-6 col-xl-7 mb-3">
+            <span class="text-big">12</span>
+            <sup class="text-success">+12%</sup>
+          </div>
+        </div>
+        <!-- / Numbers -->
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / Statistics -->
+
 <p>Symbol name: {{this.symbol.toUpperCase()}}</p>
 
-<ejs-chart [primaryXAxis]='primaryXAxis' id="chart-container">
-  <e-series-collection>
-    <e-series [dataSource]='chartData' name='Sales' type='Line' xName='month' yName='sales'></e-series>
-  </e-series-collection>
-</ejs-chart>
+<igx-financial-chart [calloutsDataSource]="calloutsData" [dataSource]="stocksData"
+                     brushes="#8c42f4, #1aba2a, #6b6b6b"
+                     calloutsLabelMemberPath="label"
+                     calloutsVisible="true"
+                     calloutsXMemberPath="index"
+
+                     calloutsYMemberPath="value"
+                     chartType="line"
+                     crosshairsAnnotationEnabled="true"
+                     crosshairsDisplayMode="both"
+                     finalValueAnnotationsVisible="true"
+
+                     height="500px"
+                     isLegendVisible="false"
+                     negativeBrushes="#e23a31"
+                     negativeOutlines="#e23a31"
+                     outlines="#8c42f4, #1aba2a, #6b6b6b"
+                     volumeType="none"
+                     width="100%">
+</igx-financial-chart>
+

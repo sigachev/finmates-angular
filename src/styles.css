@@ -6,3 +6,9 @@
   /*margin-top: 25px;*/
 }
 
+
+/*fix issue with Ignite Chart + bootstrap reboot*/
+.financialChartRangeSelectorLabel {
+  margin-bottom: 0rem !important
+}
+

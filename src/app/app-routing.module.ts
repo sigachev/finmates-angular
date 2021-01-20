@@ -16,7 +16,6 @@ import {AuthGuard} from './guards/auth.guard';
 import {Role} from './models/role';
 import {PublicGuard} from './guards/public.guard';
 import {ContactsComponent} from './components/public-pages/contacts/contacts.component';
-import {ChartComponent} from './components/chart/chart.component';
 
 // *******************************************************************************
 // Routes
@@ -66,11 +65,6 @@ const routes: Routes = [
     ]
   },
 
-  {
-    path: 'chart', component: LayoutWithoutSidenavComponent, children: [
-      {path: '', component: ChartComponent},
-    ]
-  },
 
   /*  {
       path: 'stock', component: LayoutWithoutSidenavComponent, children: [

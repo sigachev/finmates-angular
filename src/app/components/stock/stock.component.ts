@@ -11,9 +11,11 @@ export class StockComponent implements OnInit {
 
   public symbol = '';
   public title: string;
+  public price = 0;
 
   public stocksData: any;
   public calloutsData: any[];
+
 
   constructor(private route: ActivatedRoute,
               private dataService: StockDataService) {
@@ -29,6 +31,10 @@ export class StockComponent implements OnInit {
     this.title = 'Sales Analysis';
 
     this.symbol = this.route.snapshot.paramMap.get('symbol');
+    this.dataService.getPrice(this.symbol).subscribe((data: any[]) => {
+      console.log(data);
+      this.price = +data;
+    });
   }
 
 

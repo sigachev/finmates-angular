@@ -1,3 +1,4 @@
+
 let stockData: IVolume[] = [
   {x: new Date('2012-04-02'), open: 85.975716, high: 88.395714, low: 85.76857, close: 88.375717, volume: 14958790},
   {x: new Date('2012-04-03'), open: 89.614288, high: 90.315712, low: 88.93, close: 89.902855, volume: 20863990},

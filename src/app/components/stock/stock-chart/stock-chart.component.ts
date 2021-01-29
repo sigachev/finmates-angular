@@ -12,7 +12,6 @@ export class StockChartComponent implements OnInit {
 
   width = 100;
   height = 100;
-
   constructor() {
   }
 
@@ -47,7 +46,7 @@ export class StockChartComponent implements OnInit {
             count: 1,
             text: 'All'
           }],
-        selected: 1,
+        selected: 3,
         inputEnabled: false
       },
       title: {

@@ -1,18 +1,21 @@
+<!--
 <h4 class="font-weight-bold py-3 mb-4">
   {{symbol | uppercase}}
   <div class="text-muted text-tiny mt-1"><small class="font-weight-normal">Today is Tuesday, 8 February 2021</small>
   </div>
 </h4>
+-->
 
-<!-- Statistics -->
+<!-- Stock Data -->
 <div class="card mb-4">
   <h6 class="card-header with-elements">
     <div class="card-header-title">Market Summary: {{symbol | uppercase}} : {{price | currency}}</div>
     <div class="card-header-elements ml-auto">
 
 
-      <!--      <button class="btn rounded-pill btn-outline-success" type="button">Add to Watchlist</button>
-            <button class="btn rounded-pill btn-outline-danger" type="button">Add to Portfolio</button>-->
+      <button class="btn rounded-pill btn-outline-success" type="button">Add to Watchlist</button>
+      <span class="px-2"></span>
+      <button class="btn rounded-pill btn-outline-danger" type="button">Add to Portfolio</button>
 
     </div>
   </h6>
@@ -20,26 +23,12 @@
     <div class="col-md-8 col-lg-12 col-xl-9">
       <div class="card-body">
 
-        <igx-financial-chart [calloutsDataSource]="calloutsData" [dataSource]="stocksData"
-                             brushes="#8c42f4, #1aba2a, #6b6b6b"
-                             calloutsLabelMemberPath="label"
-                             calloutsVisible="true"
-                             calloutsXMemberPath="index"
 
-                             calloutsYMemberPath="value"
-                             chartType="line"
-                             crosshairsAnnotationEnabled="true"
-                             crosshairsDisplayMode="both"
-                             finalValueAnnotationsVisible="true"
+        <!--//////////////////-->
+        <app-stock-chart
+          [ngStyle]="{'width':width +'%','height':height+'%','display':'block', 'overflow':'hidden'}"></app-stock-chart>
+        <!--    ///////////////////-->
 
-                             height="640px"
-                             isLegendVisible="false"
-                             negativeBrushes="#e23a31"
-                             negativeOutlines="#e23a31"
-                             outlines="#8c42f4, #1aba2a, #6b6b6b"
-                             volumeType="none"
-                             width="100%">
-        </igx-financial-chart>
 
       </div>
     </div>
@@ -85,24 +74,5 @@
 
 <p>Symbol name: {{this.symbol.toUpperCase()}}</p>
 
-<igx-financial-chart [calloutsDataSource]="calloutsData" [dataSource]="stocksData"
-                     brushes="#8c42f4, #1aba2a, #6b6b6b"
-                     calloutsLabelMemberPath="label"
-                     calloutsVisible="true"
-                     calloutsXMemberPath="index"
 
-                     calloutsYMemberPath="value"
-                     chartType="line"
-                     crosshairsAnnotationEnabled="true"
-                     crosshairsDisplayMode="both"
-                     finalValueAnnotationsVisible="true"
-
-                     height="500px"
-                     isLegendVisible="false"
-                     negativeBrushes="#e23a31"
-                     negativeOutlines="#e23a31"
-                     outlines="#8c42f4, #1aba2a, #6b6b6b"
-                     volumeType="none"
-                     width="100%">
-</igx-financial-chart>
 

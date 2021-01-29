@@ -38,6 +38,7 @@
               /*"node_modules/igniteui-angular/styles/igniteui-angular.css"*/
             ],
             "scripts": [
+              "src/assets/js/tradingview.js"
               /*"node_modules/hammerjs/hammer.min.js"*/
             ]
           },

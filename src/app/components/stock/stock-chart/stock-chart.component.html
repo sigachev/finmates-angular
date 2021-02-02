@@ -1,9 +1,4 @@
 <!--<div class="highcharts-container" [chart]="chart"></div>-->
 
-
-<div #hct id="highcharts1"
-
-     style="width: 100%; height: 400px; display: block;"
-
-></div>
+<highcharts-chart #hct [constructorType]="'stockChart'" id="stock-chart"></highcharts-chart>
 <button (click)="Reflow()" class="btn btn-primary">Update Chart Data</button>

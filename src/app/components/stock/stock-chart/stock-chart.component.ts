@@ -1,6 +1,5 @@
 import {AfterViewChecked, AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {StockChart} from 'angular-highcharts';
-import * as Highcharts from 'highcharts';
+import * as Highcharts from 'highcharts/highstock';
 
 
 @Component({
@@ -15,7 +14,7 @@ export class StockChartComponent implements OnInit, AfterViewInit, AfterViewChec
   }
 
   @ViewChild('hct') public hChart: ElementRef;
-  chart: StockChart;
+  chart;
   data = [
     [1293580800000, 46.47],
     [1293667200000, 46.24],
@@ -1863,9 +1862,8 @@ export class StockChartComponent implements OnInit, AfterViewInit, AfterViewChec
     [1513900800000, 175.01],
     [1514246400000, 170.57]
   ];
-  chart1;
-  highcharts = Highcharts;
 
+  /*  highcharts = Highcharts;*/
 
   /*
     chartOptions = {
@@ -1916,19 +1914,20 @@ export class StockChartComponent implements OnInit, AfterViewInit, AfterViewChec
 
 
   ngOnInit(): void {
-    this.chart1 = Highcharts.chart('highcharts1', {
+    this.chart = Highcharts.stockChart('stock-chart', {
 
       chart: {
         type: 'line'
       },
       title: {
-        text: 'Monthly Site Visitor'
+        text: 'ccc'
       },
       rangeSelector: {
+        allButtonsEnabled: true,
         buttons: [{
           type: 'day',
           count: 1,
-          text: '1D'
+          text: '1D',
         }, {
           type: 'week',
           count: 1,
@@ -1963,22 +1962,22 @@ export class StockChartComponent implements OnInit, AfterViewInit, AfterViewChec
 
     });
 
-    this.chart1.reflow();
+    this.chart.reflow();
   }
 
   ngAfterViewInit(): void {
     /* setTimeout (() => {
        console.log('Hello from set Timeout');
      }, 3000);*/
-    this.chart1.reflow();
+    this.chart.reflow();
     console.log('Hello from functionNr1 after setTimeout in code');
   }
 
   Reflow() {
-    this.chart1.reflow();
+    this.chart.reflow();
   }
 
   ngAfterViewChecked(): void {
-    this.chart1.reflow();
+    this.chart.reflow();
   }
 }
